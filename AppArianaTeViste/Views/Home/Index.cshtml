@@ -1,0 +1,56 @@
+﻿@{
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+
+<div class="text-center">
+    <h1 class="display-4">ARIANA TE VISTE</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-10">
+        <div class="alert alert-info" role="alert">
+            crud colores
+        </div>
+
+        <button type="button" id="boton-nuevo-color" class="btn btn-success btn-sm">Nuevo Color</button>
+        
+    </div>
+    
+    <div id="contenido">
+       
+    </div>
+
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modalColor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MANEJO DE COLORES</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label  class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="txtColor" name="Descripcion" autocomplete="off">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-guardar-color">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="~/js/index.js"></script>
+}

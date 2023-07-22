@@ -1,0 +1,26 @@
+﻿#validationIcon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+}
+
+    #validationIcon::before {
+        content: "\2713"; /* Código unicode para el símbolo de tilde */
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 18px; /* Ajustar según el tamaño del ícono */
+    }
+
+.valid {
+    background-color: green;
+    color: white; /* Cambiar el color del tilde a blanco */
+}
+
+.invalid {
+    background-color: red;
+    color: white; /* Cambiar el color del tilde a blanco */
+}

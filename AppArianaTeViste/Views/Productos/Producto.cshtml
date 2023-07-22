@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewData["Title"] = "Productos";
+}
+
+
+
+<h1>Nota de Pedidos Productos</h1>
+
+
+<div class="col-auto">
+    <h4>Fecha:</h4>
+    <p id="DateTime"/>
+</div>
+
+<div class="row g-1 align-items-center">
+   
+
+    <div class="col-auto">
+        <label for="inpCodigo" class="col-form-label-sm ">Codigo</label>
+    </div>
+    <div class="col-auto">
+        <input type="number" id="InpCodigo" class="form-control form-control-sm" placeholder="Codigo" value="">
+        
+    </div>
+    <div class="col-auto">
+        <button id="btnCodigo" class="btn btn-primary btn-sm">Buscar</button>
+    </div>
+
+
+
+    <div class="col-auto">
+        <label for="inpDescripcion" class="col-form-label-sm">Descripcion</label>
+        <span id="validationIcon"></span>
+    </div>
+    <div class="col-auto">
+        <input type="text" id="InpDescripcion" class="form-control form-control-sm" placeholder="Descripcion" value="">
+    </div>
+    <div class="col-auto">
+        <button id="btnDescripcion" class="btn btn-primary btn-sm">Buscar</button>
+    </div>
+
+
+
+    <div>
+        <input type="text" id="inpDetalle" class="form-control form-control-sm" />
+    </div>
+
+
+
+    <div class="col-auto">
+        <label for="inpCantidad" class="col-form-label">Cantidad</label>
+    </div>
+    <div class="col-auto">
+        <input type="number" id="inpCantidad" required class="form-control form-control-sm" placeholder="Cantidad"/>
+    </div>
+    <div class="col-auto">
+        <button id="btnAgregar" class="btn btn-primary btn-sm">Agregar</button>
+    </div>
+    <div class="col-auto">
+        <button id="btnBorrar" class="btn btn-danger btn-sm">Borrar</button>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalProductos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Tabla Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body" id="modalContent">
+                <!-- Contenido dinámico se agregará aquí -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tabla productos seleccionados -->
+
+<table id="tablaProducto" class="table table-dark table-responsive">
+    <thead class="small">
+            <tr>
+                <th>Codigo</th>
+                <th>Cantidad</th>
+                <th>Descripcion</th>
+                <th>Talle</th>
+                <th>Precio unit.</th>
+                <th>Precio total</th>
+                <th>Action</th>
+            </tr>
+            
+    </thead>
+        <tbody id="tableBody">
+        <tr class="table-active-small">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tfoot id="tfoot1">
+        
+        </tfoot>
+   
+</table>
+
+<button id="btnGrabar" class="btn btn-primary btn-sm">Grabar Venta</button>
+<!-- Modal -->
+<div class="modal fade" id="modalColor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">MANEJO DE COLORES</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Descripcion</label>
+                    <input type="text" class="form-control" id="txtColor" name="Descripcion" autocomplete="off">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeModalBtn">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-guardar-color">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <link href="~/css/stylesheet.css" rel="stylesheet" />
+    <script src="~/lib/datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="~/lib/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="~/js/ordernote.js"></script>
+}
